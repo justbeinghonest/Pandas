@@ -1,9 +1,0 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-columns = ["Year","Mean"]
-df = pd.read_csv('annual_csv.csv', usecols=columns)
-plt.style.use("fivethirtyeight")
-plt.figure(figsize=(12,10))
-plt.title("Annual Global Temperature Record")
-plt.plot(df.Year,df.Mean)
-plt.show()
