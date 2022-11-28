@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df=pd.read_csv(r'Data_Science_Jobs_in_India.csv')
+col_company_name = df['company_name'].astype(str)
+col_job_title = df['job_title'].astype(str)
+col_min_experience = df['min_experience'].astype(int)
+col_avg_salary = df['avg_salary'].astype(np.float64)
+col_min_salary = df['min_salary'].astype(np.float64)
+col_max_salary = df['max_salary'].astype(np.float64)
+col_num_of_salaries = df['num_of_salaries']
+plt.style.use('Solarize_Light2')
+plt.figure(figsize=(8,8))
+plt.xlabel('Average Salary(Lakhs)',fontsize=10,color='red')
+plt.ylabel('Job Title(INDIA)',fontsize=10,color='red')
+plt.xticks(x='job_title',rotation=90,fontsize=6)
+xb = (df.job_title)
+yb=df.avg_salary
+plt.barh(xb,yb)
+plt.show()
